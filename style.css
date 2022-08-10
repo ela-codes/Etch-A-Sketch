@@ -1,0 +1,20 @@
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.row {
+    width: 320px;
+    display: flex;
+}
+
+.box {
+    border: 1px solid;
+    height: 20px;
+    width: 20px;
+}
