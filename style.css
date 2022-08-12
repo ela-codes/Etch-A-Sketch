@@ -15,9 +15,10 @@ body {
     flex: 1;
 }
 
-.footer {
+footer {
     text-align: center;
 }
+
 
 .row {
     display: flex;
@@ -26,16 +27,19 @@ body {
 
 .box {
     border: 1px solid;
-    height: 30px;
+    flex: 1;
     width: 30px;
+    height: 30px;
+
 }
 
-/* permanent change when box is clicked */
+
 .hovered {
     background-color: black;
 }
 
 
+/*sidebar styling */
 .reset {
     font-size: 20px;
     font-weight: 400;

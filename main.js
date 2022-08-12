@@ -1,14 +1,15 @@
 // create main grid container
 const grid = document.querySelector('.container')
 
-
+// default size of grid is 16 x 16
+let gridSize = 16
 // create a number of specified rows
-for (let i = 1; i <= 16; i++) {
+for (let i = 1; i <= gridSize; i++) {
     const gridRow = document.createElement('div')
     gridRow.classList.add('row')
     grid.appendChild(gridRow)
     // create number of specified boxes per row
-    for (let j = 1; j <= 16; j++) {
+    for (let j = 1; j <= gridSize; j++) {
         const box = document.createElement('div')
         box.classList.add('row', `${i}`)
         box.classList.add('box', `${j}`)
@@ -37,3 +38,16 @@ resetButton.addEventListener('click', () => resetBoxColor(gridBoxes))
 function resetBoxColor(gridBoxes) {
     gridBoxes.forEach(box => box.classList.remove('hovered'))
 }
+
+// listen for new grid size input, code setup but not yet working
+
+// function changeGridSize(event) {
+//     event.preventDefault();
+//     console.log(event)
+    
+// }
+
+// const userInput = document.querySelector('#inputSize')
+
+// userInput.addEventListener('submit', event => changeGridSize(event))
+
