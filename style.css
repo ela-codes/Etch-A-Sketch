@@ -21,10 +21,14 @@ footer {
 
 /* game grid */
 
+.container {
+    max-height: 100vh
+}
+
 .row {
     display: flex;
     flex: 1;
-    max-width: 1000px;
+    max-width: 70vh;
     max-height: 20px;
 }
 

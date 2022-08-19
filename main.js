@@ -2,10 +2,9 @@ const grid = document.querySelector('.container')
 
 const resetButton = document.querySelector('button.reset')
 
-// default size of grid is 16 x 16
-let gridSize = 16
+let defaultSize = 16
 
-createGrid(gridSize)
+createGrid(defaultSize)
 
 function createGrid(gridSize) {
     // create a number of specified rows
@@ -18,6 +17,9 @@ function createGrid(gridSize) {
             const box = document.createElement('div')
             box.classList.add('row', `${i}`)
             box.classList.add('box', `${j}`)
+            if (gridSize >= 50) {
+                box.classList.add('smallBox')
+            }
             gridRow.appendChild(box)
         }
     }
@@ -58,8 +60,10 @@ function changeGridSize(event) {
         event.preventDefault();
         removeGrid()
         let newSize = Number(userInput.value)
-        if (newSize >= 2 && newSize <= 50) {
+        if (newSize >= 2 && newSize <= 100) {
             createGrid(newSize)
+        } else {
+            createGrid(defaultSize)
         }
     }
 }
