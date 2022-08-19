@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    font-family: 'Monospace', serif;
+    font-family: Calibri, sans-serif
 }
 
 .mainPage {
@@ -17,12 +17,29 @@ body {
 
 footer {
     text-align: center;
+    color: #585757;
 }
 
 /* game grid */
 
-.container {
-    max-height: 100vh
+.gridTitle {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.gridContainer {
+    max-height: 90vh;
+    background-color: #fafafa;
+    border: 20px solid #E3E3E3;
+    border-radius: 5%;
+}
+
+.gridContainerDark {
+    background-color: #464040;
+    border: 20px solid #6d6c6c;
 }
 
 .row {
@@ -33,19 +50,19 @@ footer {
 }
 
 .box {
-    border: 1px solid;
+    border: 1px solid #E3E3E3;
     width: 20px;
     height: 20px;
 }
 
 .smallBox {
-    border: 1px solid;
+    border: 1px solid #E3E3E3;
     width: 10px;
     height: 10px;
 }
 
 .hovered {
-    background-color: black;
+    background-color: #7c7c7c;
 }
 
 
@@ -53,15 +70,28 @@ footer {
 .sideItems {
     display: flex;
     flex-direction: column;
+    background-color: #E3E3E3;
+    border: 20px solid #E3E3E3;
+    border-radius: 10%;
+    padding: 10px;
     
 }
 
-.reset {
-    margin-top: 20px;
+form {
+    text-align: center;    
+}
+
+input {
+    border: 1px solid #E3E3E3;
+}
+
+button {
+    font-family: Calibri, sans-serif;
+    margin-top: 10px;
     font-size: 15px;
     font-weight: 400;
-    border: 1px solid;
-    padding: 8px;
+    border: 1px solid #E3E3E3;
+    padding: 5px;
     outline: none;
     cursor: pointer;    
 }
@@ -76,3 +106,5 @@ button:active {
   box-shadow: 0 2px 2px #666;
   transform: translateY(4px);
 }
+
+

@@ -1,8 +1,11 @@
-const grid = document.querySelector('.container')
+const grid = document.querySelector('.gridContainer')
 
 const resetButton = document.querySelector('button.reset')
 
-let defaultSize = 16
+const darkModeButton = document.querySelector('button.darkGrid')
+const lightModeButton = document.querySelector('button.lightGrid')
+
+let defaultSize = 20
 
 createGrid(defaultSize)
 
@@ -28,6 +31,9 @@ function createGrid(gridSize) {
     gridBoxes.forEach(box => box.addEventListener('mouseover', e => changeBoxColor(e.target)))  // highlights boxes
 
     resetButton.addEventListener('click', () => resetBoxColor(gridBoxes)) 
+
+    darkModeButton.addEventListener('click', () => changeToDarkGrid())
+    lightModeButton.addEventListener('click', () => changetoLightGrid())
 }
 
 
@@ -50,6 +56,14 @@ function removeGrid() {
     }
 }
 
+function changeToDarkGrid() {
+    grid.classList.add('gridContainerDark')
+
+}
+
+function changetoLightGrid() {
+    grid.classList.remove('gridContainerDark')
+}
 
 // listen for new grid size input
 const userInput = document.getElementById('gridSize')
