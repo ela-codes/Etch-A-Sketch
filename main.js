@@ -1,9 +1,8 @@
 const grid = document.querySelector('.gridContainer')
-
 const resetButton = document.querySelector('button.reset')
-
 const darkModeButton = document.querySelector('button.darkGrid')
 const lightModeButton = document.querySelector('button.lightGrid')
+const rgbModeButton = document.querySelector('button.rgbMode')
 
 let defaultSize = 20
 
@@ -28,12 +27,12 @@ function createGrid(gridSize) {
     }
     const gridBoxes = document.querySelectorAll('.box')
     
-    gridBoxes.forEach(box => box.addEventListener('mouseover', e => changeBoxColor(e.target)))  // highlights boxes
-
+    gridBoxes.forEach(box => box.addEventListener('mouseover', e => changeBoxColor(e.target)))  
     resetButton.addEventListener('click', () => resetBoxColor(gridBoxes)) 
-
     darkModeButton.addEventListener('click', () => changeToDarkGrid())
-    lightModeButton.addEventListener('click', () => changetoLightGrid())
+    lightModeButton.addEventListener('click', () => changeToLightGrid())
+    rgbModeButton.addEventListener('click', () => changeToRgbMode())
+
 }
 
 
@@ -56,14 +55,16 @@ function removeGrid() {
     }
 }
 
+// functions that change grid colors
 function changeToDarkGrid() {
     grid.classList.add('gridContainerDark')
 
 }
 
-function changetoLightGrid() {
+function changeToLightGrid() {
     grid.classList.remove('gridContainerDark')
 }
+
 
 // listen for new grid size input
 const userInput = document.getElementById('gridSize')
@@ -82,3 +83,25 @@ function changeGridSize(event) {
     }
 }
 
+// generates random hex code
+
+function getRandomHexCode() {
+    const characters = '0123456789ABCDEF'
+    let hexCode = '#'
+    for (let i = 0; i < 6; i++) {
+        hexCode += characters[Math.floor(Math.random() * 16)]
+    }
+    return hexCode
+}
+
+function changeToRgbMode() {
+    const body = document.querySelector('body')
+    body.style.backgroundColor = getRandomHexCode()
+
+    const gridBoxes = document.querySelectorAll('.box')
+    
+    gridBoxes.forEach(box => box.addEventListener('mouseover', function(e) {
+        e.target.style.backgroundColor = getRandomHexCode()
+    }))
+    
+}

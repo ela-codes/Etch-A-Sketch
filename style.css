@@ -1,51 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Satisfy); 
+@import url(https://fonts.googleapis.com/css?family=Oswald:200|Open+Sans:700);
+
+
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    flex: 1;
-    font-family: Calibri, sans-serif
+    font-family: "Oswald", Sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
 }
 
 .mainPage {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex: 1;
 }
 
-footer {
-    text-align: center;
+.subHeader {
     color: #585757;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* game grid */
 
 .gridTitle {
-    font-family: 'Lobster', cursive;
+    font-family: 'Satisfy', cursive;
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
     font-weight: 800;
-    margin-bottom: 20px;
+    color: rgb(99, 91, 91);
+    text-shadow: 2px 2px #0c0c0c;
 }
 
 .gridContainer {
     max-height: 90vh;
     background-color: #fafafa;
     border: 20px solid #E3E3E3;
-    border-radius: 5%;
 }
 
 .gridContainerDark {
-    background-color: #464040;
-    border: 20px solid #6d6c6c;
+    background-color: #bdbdbd;
 }
 
 .row {
     display: flex;
     flex: 1;
-    max-width: 70vh;
+    max-width: 80vh;
     max-height: 20px;
 }
 
@@ -59,6 +68,7 @@ footer {
     border: 1px solid #E3E3E3;
     width: 10px;
     height: 10px;
+    max-height: 10px;
 }
 
 .hovered {
@@ -72,8 +82,7 @@ footer {
     flex-direction: column;
     background-color: #E3E3E3;
     border: 20px solid #E3E3E3;
-    border-radius: 10%;
-    padding: 10px;
+    padding: 4px;
     
 }
 
@@ -86,7 +95,7 @@ input {
 }
 
 button {
-    font-family: Calibri, sans-serif;
+    font-family: "Oswald", Sans-serif;
     margin-top: 10px;
     font-size: 15px;
     font-weight: 400;
@@ -108,3 +117,4 @@ button:active {
 }
 
 
+/* all thing RGB */
