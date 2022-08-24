@@ -6,8 +6,7 @@ This is a simple rendition of that.
 
 
 ### Summary
-> Applied knowledge of DOM manipulation and DOM events through JS
-> Improved code readability and structure
-> Used CSS3 flex to create game grid layout
-
-
+Applied knowledge of DOM manipulation and DOM events through JS.
+Improved code readability and structure.
+Used CSS3 flex to create game grid layout.
+Learned other things such as consistent code management and testing edge cases.
