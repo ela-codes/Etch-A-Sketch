@@ -23,7 +23,7 @@ body {
 
 .subHeader {
     color: #585757;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 a {
@@ -39,10 +39,10 @@ a {
     font-weight: 800;
     color: rgb(99, 91, 91);
     text-shadow: 2px 2px #0c0c0c;
+    flex: 1;
 }
 
 .gridContainer {
-    max-height: 90vh;
     background-color: #fafafa;
     border: 20px solid #E3E3E3;
 }
@@ -54,41 +54,39 @@ a {
 .row {
     display: flex;
     flex: 1;
-    max-width: 80vh;
-    max-height: 20px;
 }
 
 .box {
     border: 1px solid #E3E3E3;
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .smallBox {
     border: 1px solid #E3E3E3;
-    width: 10px;
-    height: 10px;
-    max-height: 10px;
+    width: 8px;
+    height: 8px;
 }
 
 .hovered {
     background-color: #7c7c7c;
 }
 
+.rgbHover {
+    background-color: "";
+}
 
-/*sidebar items */
-.sideItems {
+
+
+/*menu items */
+.menu {
     display: flex;
     flex-direction: column;
     background-color: #E3E3E3;
     border: 20px solid #E3E3E3;
     padding: 4px;
-    
 }
 
-form {
-    text-align: center;    
-}
 
 input {
     border: 1px solid #E3E3E3;
@@ -115,6 +113,3 @@ button:active {
   box-shadow: 0 2px 2px #666;
   transform: translateY(4px);
 }
-
-
-/* all thing RGB */

@@ -3,6 +3,7 @@ const resetButton = document.querySelector('button.reset')
 const darkModeButton = document.querySelector('button.darkGrid')
 const lightModeButton = document.querySelector('button.lightGrid')
 const rgbModeButton = document.querySelector('button.rgbMode')
+const body = document.querySelector('body')
 
 let defaultSize = 20
 
@@ -28,7 +29,7 @@ function createGrid(gridSize) {
     const gridBoxes = document.querySelectorAll('.box')
     
     gridBoxes.forEach(box => box.addEventListener('mouseover', e => changeBoxColor(e.target)))  
-    resetButton.addEventListener('click', () => resetBoxColor(gridBoxes)) 
+    resetButton.addEventListener('click', () => resetColor(gridBoxes)) 
     darkModeButton.addEventListener('click', () => changeToDarkGrid())
     lightModeButton.addEventListener('click', () => changeToLightGrid())
     rgbModeButton.addEventListener('click', () => changeToRgbMode())
@@ -41,9 +42,12 @@ function changeBoxColor(currentBox) {
     currentBox.classList.add('hovered')
 }
 
-// function that removes the "hovered" styling to all boxes
-function resetBoxColor(gridBoxes) {
+// function that resets the whole grid back to default colors
+function resetColor(gridBoxes) {
     gridBoxes.forEach(box => box.classList.remove('hovered'))
+    body.style.backgroundColor = ""
+    removeGrid()
+    createGrid(defaultSize)
 }
 
 
@@ -58,7 +62,6 @@ function removeGrid() {
 // functions that change grid colors
 function changeToDarkGrid() {
     grid.classList.add('gridContainerDark')
-
 }
 
 function changeToLightGrid() {
@@ -94,14 +97,17 @@ function getRandomHexCode() {
     return hexCode
 }
 
+
+// activate RGB mode
 function changeToRgbMode() {
-    const body = document.querySelector('body')
     body.style.backgroundColor = getRandomHexCode()
 
     const gridBoxes = document.querySelectorAll('.box')
-    
     gridBoxes.forEach(box => box.addEventListener('mouseover', function(e) {
         e.target.style.backgroundColor = getRandomHexCode()
+        resetButton.addEventListener('click', () => resetColor(gridBoxes)) 
+        darkModeButton.addEventListener('click', () => changeToDarkGrid())
+        lightModeButton.addEventListener('click', () => changeToLightGrid())
     }))
     
 }
